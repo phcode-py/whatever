@@ -1,0 +1,19 @@
+experiment,matrix_name,shape,frobenius_norm
+consensus,W_D,"(16, 16)",1.10979425907135
+consensus,W_C,"(16, 16)",1.4447330236434937
+consensus,W_V,"(16,)",0.00010255671804770827
+consensus,Rea_W1,"(16, 16)",0.8866845965385437
+consensus,Rea_b1,"(16,)",0.4250609576702118
+consensus,Rea_W2,"(16, 16)",1.364562749862671
+consensus,Rea_b2,"(16,)",0.33825841546058655
+consensus,omega,"(1, 1)",0.4919605255126953
+consensus,delta,"(1, 1)",0.46069619059562683
+polarization,W_D,"(16, 16)",1.1470398902893066
+polarization,W_C,"(16, 16)",1.9688917398452759
+polarization,W_V,"(16,)",0.1768442988395691
+polarization,Rea_W1,"(16, 16)",1.7236180305480957
+polarization,Rea_b1,"(16,)",0.4806657135486603
+polarization,Rea_W2,"(16, 16)",1.8587816953659058
+polarization,Rea_b2,"(16,)",0.45934218168258667
+polarization,omega,"(1, 1)",0.4940457344055176
+polarization,delta,"(1, 1)",0.47684893012046814
