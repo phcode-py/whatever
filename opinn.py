@@ -1090,6 +1090,36 @@ def run_experiment(
         model, dataset_name, output_dir, normalize=normalize_weights
     )
 
+    # ── Save full model checkpoint for inference (no retraining needed) ───────
+    out_path = Path(output_dir)
+    out_path.mkdir(parents=True, exist_ok=True)
+
+    model_ckpt_path = out_path / f"{dataset_name}_model.pt"
+    torch.save(model.state_dict(), model_ckpt_path)
+    print(f"  [checkpoint] model state dict → {model_ckpt_path}")
+
+    # Save adj so the model can be reconstructed for inference
+    adj_ckpt_path = out_path / f"{dataset_name}_adj.pt"
+    torch.save(adj.cpu(), adj_ckpt_path)
+
+    # Save architecture config as JSON
+    import json as _json
+    config = {
+        "input_dim":     F,
+        "hidden_dim":    hidden_dim,
+        "omega_init":    omega_init,
+        "delta_init":    delta_init,
+        "attention":     attention,
+        "reaction_type": reaction_type,
+        "ode_method":    ode_method,
+        "context_len":   context_len,
+        "horizon":       horizon,
+    }
+    config_path = out_path / f"{dataset_name}_config.json"
+    with open(config_path, "w") as fh:
+        _json.dump(config, fh, indent=2)
+    print(f"  [checkpoint] model config     → {config_path}")
+
     return {
         "dataset":         dataset_name,
         "model":           model,

@@ -1,0 +1,10 @@
+experiment,matrix_name,shape,frobenius_norm
+politics_Iran,W_D,"(32, 32)",6.5196990966796875
+politics_Iran,W_C,"(32, 32)",3.3082804679870605
+politics_Iran,W_V,"(32,)",1.2796127796173096
+politics_Iran,Rea_W1,"(32, 32)",2.978633403778076
+politics_Iran,Rea_b1,"(32,)",0.2952995300292969
+politics_Iran,Rea_W2,"(32, 32)",2.9138855934143066
+politics_Iran,Rea_b2,"(32,)",0.6429770588874817
+politics_Iran,omega,"(1, 1)",0.6696920394897461
+politics_Iran,delta,"(1, 1)",0.42548927664756775

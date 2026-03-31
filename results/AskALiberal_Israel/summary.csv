@@ -1,0 +1,10 @@
+experiment,matrix_name,shape,frobenius_norm
+AskALiberal_Israel,W_D,"(32, 32)",2.7254679203033447
+AskALiberal_Israel,W_C,"(32, 32)",3.553410053253174
+AskALiberal_Israel,W_V,"(32,)",1.6303192377090454
+AskALiberal_Israel,Rea_W1,"(32, 32)",3.5520098209381104
+AskALiberal_Israel,Rea_b1,"(32,)",0.5742912888526917
+AskALiberal_Israel,Rea_W2,"(32, 32)",3.461225748062134
+AskALiberal_Israel,Rea_b2,"(32,)",0.631144642829895
+AskALiberal_Israel,omega,"(1, 1)",0.49660998582839966
+AskALiberal_Israel,delta,"(1, 1)",0.5003039836883545

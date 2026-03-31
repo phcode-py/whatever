@@ -1,0 +1,11 @@
+{
+  "input_dim": 1,
+  "hidden_dim": 32,
+  "omega_init": 0.5,
+  "delta_init": 0.5,
+  "attention": "standard",
+  "reaction_type": "nonlinear",
+  "ode_method": "rk4",
+  "context_len": 3,
+  "horizon": 2
+}

@@ -1,0 +1,10 @@
+experiment,matrix_name,shape,frobenius_norm
+politics_AI,W_D,"(32, 32)",4.782991886138916
+politics_AI,W_C,"(32, 32)",3.1602344512939453
+politics_AI,W_V,"(32,)",0.5884696245193481
+politics_AI,Rea_W1,"(32, 32)",3.4019224643707275
+politics_AI,Rea_b1,"(32,)",0.44349274039268494
+politics_AI,Rea_W2,"(32, 32)",3.3789234161376953
+politics_AI,Rea_b2,"(32,)",0.5533536672592163
+politics_AI,omega,"(1, 1)",0.5397467017173767
+politics_AI,delta,"(1, 1)",0.48881402611732483

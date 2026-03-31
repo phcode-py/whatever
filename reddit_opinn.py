@@ -21,6 +21,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+from opinn import run_experiment, evaluate
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -31,7 +32,7 @@ import torch
 
 from transformers import pipeline as hf_pipeline
 
-from opinn import OPINN, run_experiment, evaluate
+
 
 # ─── Reddit Scraper ─────────────────────────────────────────────────────────
 
@@ -461,7 +462,7 @@ def process_data(
         bin_map = {"hourly": 3600, "daily": 86400, "weekly": 7 * 86400}
         bin_seconds = bin_map.get(time_bin, 86400)
         bin_label = time_bin
-
+    
     T = max(int(span / bin_seconds) + 1, 1)
 
     # Subsample items for uniform coverage before sentiment scoring
@@ -835,8 +836,8 @@ def main():
     parser.add_argument("--test_ratio", type=float, default=0.2)
     parser.add_argument("--time_bin", type=str, default="auto",
                         choices=["auto", "hourly", "daily", "weekly"])
-    parser.add_argument("--data_dir", type=str, default="data")
-    parser.add_argument("--results_dir", type=str, default="results")
+    parser.add_argument("--results_dir", type=str, default="results",
+                        help="Root results directory; each run gets its own subfolder")
     args = parser.parse_args()
 
     print(f"\n{'='*60}")
@@ -903,15 +904,18 @@ def main():
         print("  Insufficient data to train. Try different parameters.")
         return
 
+    # ── One folder per run ───────────────────────────────────────────────────
+    dataset_name = f"{args.subreddit}_{re.sub(r'[^a-zA-Z0-9_-]', '_', args.topic)}"
+    run_dir = str(Path(args.results_dir) / dataset_name)
+
     # ── Step 5: Save dataset ─────────────────────────────────────────────────
     print("\n[5/6] Saving dataset ...")
-    safe_name = save_dataset(
-        args.subreddit, args.topic, X_seq, adj, df, args.data_dir
+    save_dataset(
+        args.subreddit, args.topic, X_seq, adj, df, run_dir
     )
 
     # ── Step 6: Train OPINN ──────────────────────────────────────────────────
     print("\n[6/6] Training OPINN ...")
-    dataset_name = f"{args.subreddit}_{re.sub(r'[^a-zA-Z0-9_-]', '_', args.topic)}"
     run_pipeline(
         X_seq=X_seq,
         adj=adj,
@@ -922,13 +926,12 @@ def main():
         horizon=args.horizon,
         lr=args.lr,
         test_ratio=args.test_ratio,
-        output_dir=args.results_dir,
+        output_dir=run_dir,
         t_min=t_min,
         bin_seconds=bin_seconds,
     )
 
-    print(f"\nDone! Check '{args.data_dir}/' for data and "
-          f"'{args.results_dir}/' for model outputs and plots.")
+    print(f"\nDone! All outputs saved in '{run_dir}/'.")
 
 
 if __name__ == "__main__":

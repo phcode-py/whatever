@@ -1,0 +1,10 @@
+experiment,matrix_name,shape,frobenius_norm
+Conservative_Climate,W_D,"(32, 32)",3.9434890747070312
+Conservative_Climate,W_C,"(32, 32)",3.5203776359558105
+Conservative_Climate,W_V,"(32,)",0.6116581559181213
+Conservative_Climate,Rea_W1,"(32, 32)",3.260058879852295
+Conservative_Climate,Rea_b1,"(32,)",0.4911532998085022
+Conservative_Climate,Rea_W2,"(32, 32)",3.4001471996307373
+Conservative_Climate,Rea_b2,"(32,)",0.5061824321746826
+Conservative_Climate,omega,"(1, 1)",0.5194085240364075
+Conservative_Climate,delta,"(1, 1)",0.49796295166015625

@@ -1,0 +1,10 @@
+experiment,matrix_name,shape,frobenius_norm
+politics_Climate,W_D,"(32, 32)",5.646575450897217
+politics_Climate,W_C,"(32, 32)",3.3886470794677734
+politics_Climate,W_V,"(32,)",0.6190856695175171
+politics_Climate,Rea_W1,"(32, 32)",3.7572662830352783
+politics_Climate,Rea_b1,"(32,)",0.5272706747055054
+politics_Climate,Rea_W2,"(32, 32)",3.5543720722198486
+politics_Climate,Rea_b2,"(32,)",0.5967485308647156
+politics_Climate,omega,"(1, 1)",0.5996696352958679
+politics_Climate,delta,"(1, 1)",0.5069699883460999

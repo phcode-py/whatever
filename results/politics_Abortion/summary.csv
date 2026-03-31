@@ -1,0 +1,10 @@
+experiment,matrix_name,shape,frobenius_norm
+politics_Abortion,W_D,"(32, 32)",4.737894535064697
+politics_Abortion,W_C,"(32, 32)",3.3253400325775146
+politics_Abortion,W_V,"(32,)",0.4699273705482483
+politics_Abortion,Rea_W1,"(32, 32)",3.5679256916046143
+politics_Abortion,Rea_b1,"(32,)",0.563963770866394
+politics_Abortion,Rea_W2,"(32, 32)",3.412827253341675
+politics_Abortion,Rea_b2,"(32,)",0.5411524176597595
+politics_Abortion,omega,"(1, 1)",0.5467251539230347
+politics_Abortion,delta,"(1, 1)",0.5004475116729736

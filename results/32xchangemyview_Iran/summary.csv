@@ -1,0 +1,10 @@
+experiment,matrix_name,shape,frobenius_norm
+changemyview_Iran,W_D,"(32, 32)",3.067167282104492
+changemyview_Iran,W_C,"(32, 32)",3.3337433338165283
+changemyview_Iran,W_V,"(32,)",0.5837401151657104
+changemyview_Iran,Rea_W1,"(32, 32)",3.3091440200805664
+changemyview_Iran,Rea_b1,"(32,)",0.5034882426261902
+changemyview_Iran,Rea_W2,"(32, 32)",3.3753762245178223
+changemyview_Iran,Rea_b2,"(32,)",0.5454747676849365
+changemyview_Iran,omega,"(1, 1)",0.5060644149780273
+changemyview_Iran,delta,"(1, 1)",0.48510441184043884
